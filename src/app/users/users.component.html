@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="h1">Our Users</h1>
+  <div class="users-container">
+    <span class="no-data" *ngIf="usersService.users.length ===0">No users in this page.</span>
+    <mat-card (click)="navigateUser(user.id)"
+              *ngFor="let user of usersService.users" class="user-item">
+      <mat-card-header>
+        <div [style.background]="'url(' + user.avatar + ')'" mat-card-avatar></div>
+        <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
+        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button (click)="navigateUser(user.id)" mat-button>Show Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="pagination-container">
+    <app-pagination (paginate)="paginate($event)" [offset]="2" [pagination]="pagination"></app-pagination>
+  </div>
+</div>

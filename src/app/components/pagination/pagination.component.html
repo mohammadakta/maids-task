@@ -1,0 +1,19 @@
+<ul class="pagination">
+  <li (click)="changePage(pagination.page - 1)" [class]="{'cursor-not-allowed':pagination.page <= 1}"
+      class="pagination-item">
+    <a>
+      <span aria-hidden="true">«</span>
+    </a>
+  </li>
+  <li (click)="changePage(page)" *ngFor="let page of pages" [class]="isCurrentPage(page) ? 'active' : ''"
+      class="pagination-item">
+    <a>{{ page }}</a>
+  </li>
+
+  <li (click)="changePage(pagination.page + 1)" [class]="{'cursor-not-allowed':pagination.page >= pagination.total_pages}"
+      class="pagination-item">
+    <a>
+      <span aria-hidden="true">»</span>
+    </a>
+  </li>
+</ul>

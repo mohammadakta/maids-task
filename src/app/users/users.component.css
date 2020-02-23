@@ -1,0 +1,87 @@
+.mat-card-actions {
+  float: right;
+}
+
+.mat-card-avatar {
+  background-position: center center !important;
+  width: 50px;
+  height: 50px;
+}
+
+.users-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-row-gap: .5rem;
+  align-content: center;
+  justify-content: center;
+}
+
+.users-container .no-data {
+  text-align: center;
+}
+
+.users-container .user-item {
+  margin: 0 .5rem;
+  cursor: pointer;
+  height: 100px;
+}
+
+.pagination-container {
+  margin-top: 20px;
+}
+
+.h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+  position: relative;
+}
+
+.h1:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -40px;
+  height: 3px;
+  top: 50%;
+  width: 30px;
+  background-color: black;
+}
+
+.h1:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -40px;
+  height: 3px;
+  top: 50%;
+  width: 30px;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .users-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-row-gap: .75rem;
+  }
+
+  .mat-card-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .users-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: .75rem;
+  }
+}
+

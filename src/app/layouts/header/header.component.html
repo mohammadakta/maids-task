@@ -1,0 +1,22 @@
+<header id="header">
+  <nav>
+    <div *ngIf="hasBack" class="back-button-container">
+      <button (click)="router.navigateByUrl('users')" mat-button>
+        <mat-icon class="back" color="white">arrow_back</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!hasBack" class="search-container">
+      <div class="search-icon">
+        <svg fill="#a0aec0" height="20" width="20"
+             xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24.5 22.3L17 14.8A9.4 9.4 0 0 0 9.4 0 9.3 9.3 0 0 0 0 9.4 9.3 9.3 0 0 0 14.8 17l7.5 7.5a1.5 1.5 0 0 0 2.2 0c.6-.6.6-1.6 0-2.2zm-10-9.3l-.7.9-.8.6A6.2 6.2 0 1 1 9.4 3.2a6.2 6.2 0 0 1 5 9.8z"></path>
+        </svg>
+      </div>
+      <input (keyup)="search($event)"
+             class="block w-full border border-transparent text-gray-500 bg-gray-200 rounded-lg pl-10 pr-4 py-2 focus:bg-white focus:border-gray-300 focus:outline-none focus:text-gray-500 transition-3"
+             placeholder="Search by name ex: george"
+             type="text">
+    </div>
+  </nav>
+</header>
